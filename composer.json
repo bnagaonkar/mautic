@@ -127,7 +127,6 @@
         "phpunit/dbunit": "^2.0",
         "sebastian/exporter": "~2.0",
         "phpunit/phpunit-mock-objects": "~3.4.4",
-        "friendsofphp/php-cs-fixer": "^2.2",
         "symfony/var-dumper": "^3.2",
         "phpunit/phpunit-selenium": "^3.0",
         "codeception/codeception": "^2.3"
@@ -145,15 +144,11 @@
     "scripts": {
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "php -r \"if(file_exists('./.git')&&file_exists('./build/hooks/pre-commit'.(PHP_OS=='WINNT'?'.win':''))){copy('./build/hooks/pre-commit'.(PHP_OS=='WINNT'?'.win':''),'./.git/hooks/pre-commit');}\"",
-            "php -r \"if(file_exists('./.git/hooks/pre-commit')&&(PHP_OS!='WINNT')){chmod('./.git/hooks/pre-commit',0755);}\""
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
         ],
         "post-update-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "php -r \"if(file_exists('./.git')&&file_exists('./build/hooks/pre-commit'.(PHP_OS=='WINNT'?'.win':''))){copy('./build/hooks/pre-commit'.(PHP_OS=='WINNT'?'.win':''),'./.git/hooks/pre-commit');}\"",
-            "php -r \"if(file_exists('./.git/hooks/pre-commit')&&(PHP_OS!='WINNT')){chmod('./.git/hooks/pre-commit',0755);}\""
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
         ],
         "test": "bin/phpunit --bootstrap vendor/autoload.php --configuration app/phpunit.xml.dist"
     },
